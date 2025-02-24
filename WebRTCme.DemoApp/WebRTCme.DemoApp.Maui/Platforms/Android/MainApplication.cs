@@ -3,7 +3,11 @@ using Android.Runtime;
 
 namespace WebRTCme.DemoApp.Maui;
 
-[Application]
+[Application(
+#if DEBUG
+	UsesCleartextTraffic = true
+#endif
+	)]
 public class MainApplication : MauiApplication
 {
 	public MainApplication(IntPtr handle, JniHandleOwnership ownership)

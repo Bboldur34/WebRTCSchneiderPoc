@@ -19,7 +19,7 @@ namespace WebRTCme.Middleware.Services
 
         public void Remove(string label)
         {
-            MediaStreamParametersList.Remove(MediaStreamParametersList.Single(mp => mp.Label == label));
+            MediaStreamParametersList.Remove(MediaStreamParametersList.SingleOrDefault(mp => mp.Label == label));
         }
 
         public void Clear()
@@ -29,7 +29,7 @@ namespace WebRTCme.Middleware.Services
 
         public void Update(MediaStreamParameters mediaStreamParameters)
         {
-            var current = MediaStreamParametersList.Single(mp => mp.Label == mediaStreamParameters.Label);
+            var current = MediaStreamParametersList.SingleOrDefault(mp => mp.Label == mediaStreamParameters.Label);
             current = mediaStreamParameters;
         }
     }

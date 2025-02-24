@@ -152,7 +152,7 @@ namespace WebRTCme.Connection.Signaling.Proxy.Stub
                 {
                     break;
                 }
-                catch
+                catch(Exception e)
                 {
                     // Failed to connect, trying again in TimeoutMs.
                     await Task.Delay(TimeoutMs);
