@@ -29,9 +29,9 @@ namespace SignallingServer
             services.AddSignalR((options) =>
             {
                 options.EnableDetailedErrors = true;
-                options.ClientTimeoutInterval = TimeSpan.FromSeconds(10);
-                options.KeepAliveInterval = TimeSpan.FromSeconds(3);
-                options.HandshakeTimeout = TimeSpan.FromSeconds(10);
+                options.ClientTimeoutInterval = TimeSpan.FromSeconds(30);
+                options.KeepAliveInterval = TimeSpan.FromSeconds(120);
+                options.HandshakeTimeout = TimeSpan.FromSeconds(20);
             }).AddMessagePackProtocol();
 
             services.AddSingleton<TurnServerProxyFactory>();

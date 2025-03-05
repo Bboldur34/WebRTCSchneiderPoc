@@ -203,7 +203,7 @@ namespace WebRTCme.Connection.Services
                     await CreateOrDeletePeerConnectionAsync(peerId, peerName, isInitiator: false);
                     peerContext = _connectionContext.PeerContexts.Single(context => context.Id.Equals(peerId));
                 }
-                var peerConnection = peerContext.PeerConnection;
+                var peerConnection = peerContext?.PeerConnection;
 
                 System.Diagnostics.Debug.WriteLine(
 ////        _logger.LogInformation(
